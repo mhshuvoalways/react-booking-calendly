@@ -1,0 +1,111 @@
+/* booking calendar main app */
+.booking-calendar {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  background-color: #ffffff;
+  border-radius: 0.25rem;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease-in-out;
+}
+.booking-not-available {
+  text-align: center;
+  font-size: 1.125rem;
+  padding-top: 0.5rem;
+  color: #f87171;
+}
+
+/* calendar */
+.booking-calendar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: #f1f5f9;
+  border-radius: 0.5rem;
+}
+.booking-calendar-top-arrow {
+  width: 1.75rem;
+  height: 1.75rem;
+  cursor: pointer;
+  border-radius: 9999px;
+  padding: 0.25rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.booking-calendar-day {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  justify-items: center;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+}
+.booking-calendar-date {
+  cursor: pointer;
+  border-radius: 0.25rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+}
+
+/* time */
+.booking-time {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  gap: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .booking-time {
+    flex-wrap: nowrap;
+  }
+}
+.booking-time-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+@media (min-width: 640px) {
+  .booking-time-flex {
+    width: 66.6667%;
+  }
+}
+.booking-time-time {
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1.25rem;
+  width: 100%;
+}
+.booking-time-button {
+  width: 100%;
+}
+@media (min-width: 640px) {
+  .booking-time-button {
+    width: 33.3333%;
+  }
+}
+/* btn */
+.booking-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1.25rem;
+  font-size: 1rem;
+  color: #ffffff;
+  width: 100%;
+  font-weight: 600;
+  border-radius: 0.25rem;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  border: none;
+}

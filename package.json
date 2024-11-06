@@ -1,0 +1,39 @@
+{
+  "name": "react-booking-calendly",
+  "version": "1.0.1",
+  "description": "A responsive customizable React Booking Calendar",
+  "main": "dist/BookingCalendar.umd.js",
+  "module": "dist/BookingCalendar.es.js",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mhshuvoalways/react-booking-calendly.git"
+  },
+  "keywords": [
+    "react",
+    "booking",
+    "calendar",
+    "calendly",
+    "react-calendar",
+    "booking-calendar",
+    "react-booking-calendar",
+    "react-booking-calendly"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "prepare": "npm run build"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0"
+  },
+  "author": "MH Shuvo",
+  "license": "MIT",
+  "dependencies": {
+    "lucide-react": "^0.454.0",
+    "moment": "^2.30.1"
+  }
+}

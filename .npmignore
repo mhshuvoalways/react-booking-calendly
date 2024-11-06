@@ -1,0 +1,6 @@
+src/
+node_modules/
+.vite/
+.vitepress/
+dist/MyComponent.es.js
+dist/MyComponent.umd.js
