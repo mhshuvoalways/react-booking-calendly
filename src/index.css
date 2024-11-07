@@ -29,7 +29,7 @@
   height: 1.75rem;
   cursor: pointer;
   border-radius: 9999px;
-  padding: 0.25rem;
+  padding: 0.1rem;
   transition: all 0.2s ease-in-out;
 }
 
@@ -112,4 +112,8 @@
 
 .booking-btn:hover {
   opacity: 100%;
+}
+
+.booking-btn-icon {
+  width: 1.5rem;
 }

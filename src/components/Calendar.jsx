@@ -1,5 +1,6 @@
-import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useState } from "react";
+import ArrowLeft from "../assets/arrow-left.svg";
+import ArrowRight from "../assets/arrow-right.svg";
 
 const DAYS_OF_WEEK = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
@@ -70,11 +71,13 @@ const Calendar = ({ onDateChange, primaryColor }) => {
   return (
     <>
       <div className="booking-calendar-top">
-        <ArrowLeft
+        <img
+          src={ArrowLeft}
+          alt="arrow icon"
           className="booking-calendar-top-arrow"
           onClick={handlePrevMonth}
           onMouseOver={(e) =>
-            (e.currentTarget.style.backgroundColor = "#e2e8f0")
+            (e.currentTarget.style.backgroundColor = primaryColor)
           }
           onMouseOut={(e) =>
             (e.currentTarget.style.backgroundColor = "transparent")
@@ -86,11 +89,13 @@ const Calendar = ({ onDateChange, primaryColor }) => {
             year: "numeric",
           })}
         </p>
-        <ArrowRight
+        <img
+          src={ArrowRight}
+          alt="arrow icon"
           className="booking-calendar-top-arrow"
           onClick={handleNextMonth}
           onMouseOver={(e) =>
-            (e.currentTarget.style.backgroundColor = "#e2e8f0")
+            (e.currentTarget.style.backgroundColor = primaryColor)
           }
           onMouseOut={(e) =>
             (e.currentTarget.style.backgroundColor = "transparent")
@@ -139,15 +144,6 @@ const Calendar = ({ onDateChange, primaryColor }) => {
                   : 1,
             }}
             onClick={() => handleDateClick(day)}
-            onMouseOver={(e) =>
-              (e.currentTarget.style.backgroundColor =
-                day !== today.getDate() ? "#e2e8f0" : "")
-            }
-            onMouseOut={(e) => {
-              if (!(selectedDate && day === selectedDate.getDate())) {
-                e.currentTarget.style.backgroundColor = "transparent";
-              }
-            }}
           >
             {day}
           </p>

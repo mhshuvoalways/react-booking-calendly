@@ -126,10 +126,6 @@ When the user selects a time slot and clicks the booking button, `onBookingSubmi
 - **Colors**: Use the `primaryColor` prop to set the calendar's main color (e.g., "#008000").
 - **Button Title**: Set `buttonLabel` to change the text displayed on the booking button.
 
-## Dependencies
-
-- `moment`: This package is used for time management and formatting.
-
 ## License
 
 MIT

@@ -1,4 +1,4 @@
-import { MoveRight } from "lucide-react";
+import MoveRight from "../assets/arrow-right-long.svg";
 
 const Button1 = ({ title, onClick, primaryColor }) => {
   return (
@@ -10,7 +10,7 @@ const Button1 = ({ title, onClick, primaryColor }) => {
       onClick={onClick}
     >
       {title}
-      <MoveRight />
+      <img src={MoveRight} alt="arrow icon" className="booking-btn-icon" />
     </button>
   );
 };

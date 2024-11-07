@@ -71,10 +71,7 @@ const BookingCalendar = ({
 
   return (
     <div className="booking-calendar">
-      <Calendar
-        onDateChange={handleDateChange}
-        primaryColor={primaryColor}
-      />
+      <Calendar onDateChange={handleDateChange} primaryColor={primaryColor} />
       {getAvailableTimeSlots().length ? (
         getAvailableTimeSlots().map((timeSlot, index) => (
           <TimeSlot
