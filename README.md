@@ -1,6 +1,6 @@
 # react-booking-calendly 📅
 
-A React component for booking and scheduling available time slots with ease. `react-booking-calendly` lets you display a calendar with available and reserved times for booking, providing a clean and customizable interface.
+A React component for booking and scheduling available time slots with ease. `react-booking-calendly` lets you display a calendar with available for booking, providing a clean and customizable interface.
 
 <img src="https://www.mhshuvo.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcalendar.c05957cd.png&w=640&q=75" />
 
@@ -125,6 +125,10 @@ When the user selects a time slot and clicks the booking button, `onBookingSubmi
 
 - **Colors**: Use the `primaryColor` prop to set the calendar's main color (e.g., "#008000").
 - **Button Title**: Set `buttonLabel` to change the text displayed on the booking button.
+
+## Dependencies
+
+- `moment`: This package is used for time management and formatting.
 
 ## License
 
