@@ -1,6 +1,6 @@
 {
   "name": "react-booking-calendly",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "A React component for booking and scheduling available time slots with ease. `react-booking-calendly` lets you display a calendar with available and reserved times for booking, providing a clean and customizable interface.",
   "main": "dist/BookingCalendar.umd.js",
   "module": "dist/BookingCalendar.es.js",
