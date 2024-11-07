@@ -58,7 +58,7 @@
   align-items: center;
   justify-content: space-between;
   text-align: center;
-  gap: 0.5rem;
+  gap: 0rem 0.5rem;
 }
 
 @media (min-width: 640px) {
@@ -80,7 +80,6 @@
 }
 .booking-time-time {
   border: 1px solid #e5e7eb;
-  cursor: pointer;
   border-radius: 0.25rem;
   padding: 0.5rem 1.25rem;
   width: 100%;
@@ -107,5 +106,10 @@
   border-radius: 0.25rem;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
-  border: none;
+  border: 1px solid #e5e7eb;
+  opacity: 80%;
+}
+
+.booking-btn:hover {
+  opacity: 100%;
 }

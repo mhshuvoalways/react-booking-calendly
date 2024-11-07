@@ -1,20 +1,13 @@
-import { useState } from "react";
 import BookingCalendar from "./BookingCalendar";
 
 const App = () => {
-  const [isClicked, setIsClicked] = useState(false);
-
-  const onSubmitHandler = (data) => {
-    setIsClicked(true);
+  const onBookingSubmit = (data) => {
     console.log(data);
-    setTimeout(() => {
-      setIsClicked(false);
-    }, 3000);
   };
 
   const availabilities = [
     {
-      day: "Wednesday",
+      day: "Thursday",
       time: [
         {
           startingTime: "1:00AM",
@@ -33,9 +26,9 @@ const App = () => {
     },
   ];
 
-  const reserveSlots = [
+  const reservedSlots = [
     {
-      date: "2024-11-06",
+      date: "2024-11-07",
       startingTime: "1:15AM",
       endingTime: "2:15AM",
     },
@@ -49,12 +42,11 @@ const App = () => {
   return (
     <BookingCalendar
       availabilities={availabilities}
-      reserveSlots={reserveSlots}
+      reservedSlots={reservedSlots}
       interval={1}
-      onSubmitHandler={onSubmitHandler}
-      isClicked={isClicked}
+      onBookingSubmit={onBookingSubmit}
       primaryColor={"#008000"}
-      buttonTitle={"Book"}
+      buttonLabel={"Book"}
     />
   );
 };

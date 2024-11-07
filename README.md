@@ -2,6 +2,8 @@
 
 A React component for booking and scheduling available time slots with ease. `react-booking-calendly` lets you display a calendar with available and reserved times for booking, providing a clean and customizable interface.
 
+<img src="https://www.mhshuvo.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcalendar.c05957cd.png&w=640&q=75" />
+
 ## Installation
 
 Install the package via npm:
@@ -23,25 +25,18 @@ To use `react-booking-calendly`, import and use the main component in your appli
 ### Example
 
 ```javascript
-import { useState } from "react";
 import BookingCalendar from "react-booking-calendly";
 
 const App = () => { 
-  const [isClicked, setIsClicked] = useState(false);
-
   // Handle submission of booking data
-  const onSubmitHandler = (data) => {
-    setIsClicked(true);
-    console.log("Booking Data:", data);
-    setTimeout(() => {
-      setIsClicked(false);
-    }, 3000);
+  const onBookingSubmit = (data) => {
+     console.log("Booking Data:", data);
   };
 
   // Define available time slots by day of the week
   const availabilities = [
     {
-      day: "Wednesday",
+      day: "Thursday",
       time: [
         {
           startingTime: "1:00AM",
@@ -61,9 +56,9 @@ const App = () => {
   ];
 
   // Define reserved slots with specific dates and times
-  const reserveSlots = [
+  const reservedSlots = [
     {
-      date: "2024-11-06",
+      date: "2024-11-07",
       startingTime: "1:15AM",
       endingTime: "2:15AM",
     },
@@ -77,12 +72,11 @@ const App = () => {
   return (
     <BookingCalendar
       availabilities={availabilities}
-      reserveSlots={reserveSlots}
+      reservedSlots={reservedSlots}
       interval={1} // Time interval between available slots (in hours)
-      onSubmitHandler={onSubmitHandler}
-      isClicked={isClicked}
+      onBookingSubmit={onBookingSubmit}
       primaryColor={"#008000"} // Customize color
-      buttonTitle={"Book"}
+      buttonLabel={"Book"}
     />
   );
 };
@@ -97,16 +91,15 @@ The `BookingCalendar` component accepts the following props:
 | Prop             | Type          | Description                                                                                           |
 |------------------|---------------|-------------------------------------------------------------------------------------------------------|
 | `availabilities` | `array`       | An array of objects defining available times by day of the week.                                      |
-| `reserveSlots`   | `array`       | An array of objects defining reserved times with specific dates.                                      |
+| `reservedSlots`   | `array`       | An array of objects defining reserved times with specific dates.                                      |
 | `interval`       | `number`      | The interval between time slots (in hours).                                                           |
-| `onSubmitHandler`| `function`    | Callback function triggered when a user clicks the "Book" button. Receives booking details.          |
-| `isClicked`      | `boolean`     | Tracks button click state for UX feedback (e.g., loading or confirmation).                           |
+| `onBookingSubmit`| `function`    | Callback function triggered when a user clicks the "Book" button. Receives booking details.          |                         |
 | `primaryColor`   | `string`      | Customize the primary color of the calendar and time slots.                                          |
-| `buttonTitle`    | `string`      | Customize the button text shown to users (e.g., "Book", "Reserve").                                  |
+| `buttonLabel`    | `string`      | Customize the button text shown to users (e.g., "Book", "Reserve").                                  |
 
 ### Callback Data
 
-When the user selects a time slot and clicks the booking button, `onSubmitHandler` returns booking data with the following format:
+When the user selects a time slot and clicks the booking button, `onBookingSubmit` returns booking data with the following format:
 
 ```javascript
 {
@@ -131,7 +124,7 @@ When the user selects a time slot and clicks the booking button, `onSubmitHandle
 ## Customization
 
 - **Colors**: Use the `primaryColor` prop to set the calendar's main color (e.g., "#008000").
-- **Button Title**: Set `buttonTitle` to change the text displayed on the booking button.
+- **Button Title**: Set `buttonLabel` to change the text displayed on the booking button.
 
 ## Dependencies
 

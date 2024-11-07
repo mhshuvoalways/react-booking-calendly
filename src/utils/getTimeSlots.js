@@ -97,7 +97,7 @@ const allAvailability = [
   "11:45PM",
 ];
 
-function getTimeSlots(timeAvailables, reserveSlots, interval) {
+function getTimeSlots(availabilities, reservedSlots, interval) {
   const timeToMinutes = (time) => {
     const [timePart, modifier] = time.split(/(AM|PM)/);
     let [hours, minutes] = timePart.split(":").map(Number);
@@ -108,14 +108,14 @@ function getTimeSlots(timeAvailables, reserveSlots, interval) {
 
   const minDuration = interval * 60;
 
-  const busyTimesInMinutes = reserveSlots.map((slot) => ({
+  const busyTimesInMinutes = reservedSlots.map((slot) => ({
     start: timeToMinutes(slot.startingTime),
     end: timeToMinutes(slot.endingTime),
   }));
 
   const results = [];
 
-  for (const available of timeAvailables) {
+  for (const available of availabilities) {
     const availableStart = timeToMinutes(available.startingTime);
     const availableEnd = timeToMinutes(available.endingTime);
 

@@ -1,10 +1,10 @@
 import moment from "moment";
 import { useEffect, useState } from "react";
-import Calendly from "./components/calender";
-import Time from "./components/calender/Time";
+import Calendar from "./components/Calendar";
+import TimeSlot from "./components/TimeSlot";
 import getTimeSlots from "./utils/getTimeSlots";
 
-const days = [
+const DAYS_OF_WEEK = [
   "Sunday",
   "Monday",
   "Tuesday",
@@ -14,50 +14,56 @@ const days = [
   "Saturday",
 ];
 
-const BookTutor = ({
+const BookingCalendar = ({
   availabilities,
-  reserveSlots,
+  reservedSlots,
   interval,
-  onSubmitHandler,
-  isClicked,
+  onBookingSubmit,
   primaryColor,
+  buttonLabel,
 }) => {
   const [selectedDate, setSelectedDate] = useState();
 
-  const dateHandler = (date) => {
+  const handleDateChange = (date) => {
     setSelectedDate(date);
   };
 
   useEffect(() => {
-    dateHandler(new Date());
+    handleDateChange(new Date());
   }, []);
 
-  const getAvailibility = () => {
+  const getDailyAvailability = () => {
     const date = new Date(selectedDate);
     const dayOfWeek = date.getDay();
-    return availabilities.find((av) => av.day === days[dayOfWeek]);
+    return availabilities.find(
+      (availability) => availability.day === DAYS_OF_WEEK[dayOfWeek]
+    );
   };
 
-  const getReserveSlots = () => {
-    return reserveSlots.filter(
+  const getDailyReservedSlots = () => {
+    return reservedSlots.filter(
       (slot) =>
         moment(slot.date).format("YYYY-MM-DD") ===
         moment(selectedDate).format("YYYY-MM-DD")
     );
   };
 
-  const getFinalResults = () => {
-    if (selectedDate && getAvailibility()) {
-      return getTimeSlots(getAvailibility().time, getReserveSlots(), interval);
-    } else {
-      return [];
+  const getAvailableTimeSlots = () => {
+    const dailyAvailability = getDailyAvailability();
+    if (selectedDate && dailyAvailability) {
+      return getTimeSlots(
+        dailyAvailability.time,
+        getDailyReservedSlots(),
+        interval
+      );
     }
+    return [];
   };
 
-  const submitHander = (startingTime, endingTime) => {
-    onSubmitHandler({
-      startingTime,
-      endingTime,
+  const handleBookingSubmit = (startTime, endTime) => {
+    onBookingSubmit({
+      startTime,
+      endTime,
       date: selectedDate,
       timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
     });
@@ -65,14 +71,17 @@ const BookTutor = ({
 
   return (
     <div className="booking-calendar">
-      <Calendly dateHandler={dateHandler} primaryColor={primaryColor} />
-      {getFinalResults().length ? (
-        getFinalResults().map((el, index) => (
-          <Time
+      <Calendar
+        onDateChange={handleDateChange}
+        primaryColor={primaryColor}
+      />
+      {getAvailableTimeSlots().length ? (
+        getAvailableTimeSlots().map((timeSlot, index) => (
+          <TimeSlot
             key={index}
-            timeSlots={el}
-            submitHander={submitHander}
-            isClicked={isClicked}
+            timeSlot={timeSlot}
+            onSubmit={handleBookingSubmit}
+            buttonLabel={buttonLabel}
             primaryColor={primaryColor}
           />
         ))
@@ -83,4 +92,4 @@ const BookTutor = ({
   );
 };
 
-export default BookTutor;
+export default BookingCalendar;

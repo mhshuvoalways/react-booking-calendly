@@ -1,25 +1,18 @@
-const Button = ({ title, onClick, isClicked, primaryColor }) => {
+import { MoveRight } from "lucide-react";
+
+const Button1 = ({ title, onClick, primaryColor }) => {
   return (
     <button
       className="booking-btn"
       style={{
         backgroundColor: primaryColor,
-        opacity: "70%",
       }}
       onClick={onClick}
-      disabled={isClicked}
-      onMouseOver={(e) => {
-        e.currentTarget.style.opacity = "100%";
-        e.currentTarget.style.borderColor = primaryColor;
-      }}
-      onMouseOut={(e) => {
-        e.currentTarget.style.opacity = "70%";
-        e.currentTarget.style.borderColor = "";
-      }}
     >
       {title}
+      <MoveRight />
     </button>
   );
 };
 
-export default Button;
+export default Button1;

@@ -1,9 +1,9 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useState } from "react";
 
-const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const DAYS_OF_WEEK = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-const Calendar = ({ dateHandler, primaryColor }) => {
+const Calendar = ({ onDateChange, primaryColor }) => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(null);
 
@@ -61,7 +61,7 @@ const Calendar = ({ dateHandler, primaryColor }) => {
         return;
       }
       setSelectedDate(newDate);
-      dateHandler(newDate);
+      onDateChange(newDate);
     }
   };
 
@@ -98,7 +98,7 @@ const Calendar = ({ dateHandler, primaryColor }) => {
         />
       </div>
       <div className="booking-calendar-day">
-        {daysOfWeek.map((day) => (
+        {DAYS_OF_WEEK.map((day) => (
           <p key={day} style={{ fontWeight: 500 }}>
             {day}
           </p>
