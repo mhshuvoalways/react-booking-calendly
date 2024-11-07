@@ -110,17 +110,6 @@ When the user selects a time slot and clicks the booking button, `onBookingSubmi
 }
 ```
 
-### Example Response
-
-```javascript
-{
-  startingTime: "6:00PM",
-  endingTime: "8:00PM",
-  date: "2024-11-06",
-  timeZone: "America/New_York"
-}
-```
-
 ## Customization
 
 - **Colors**: Use the `primaryColor` prop to set the calendar's main color (e.g., "#008000").

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Calendar from "./components/Calendar";
 import TimeSlot from "./components/TimeSlot";
 import getTimeSlots from "./utils/getTimeSlots";
+import "./index.css";
 
 const DAYS_OF_WEEK = [
   "Sunday",
