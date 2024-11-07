@@ -1,7 +1,7 @@
 {
   "name": "react-booking-calendly",
-  "version": "1.1.5",
-  "description": "A React component for booking and scheduling available time slots with ease. `react-booking-calendly` lets you display a calendar with available and reserved times for booking, providing a clean and customizable interface.",
+  "version": "1.1.8",
+  "description": "A React component for booking and scheduling available time slots with ease. `react-booking-calendly` lets you display a calendar with available for booking, providing a clean and customizable interface.",
   "main": "dist/BookingCalendar.umd.js",
   "module": "dist/BookingCalendar.es.js",
   "files": [
@@ -24,13 +24,15 @@
   "author": "MH Shuvo",
   "license": "MIT",
   "scripts": {
-    "dev": "vite",
     "build": "vite build",
     "prepare": "npm run build"
   },
   "peerDependencies": {
     "react": "^17.0.0 || ^18.0.0",
     "react-dom": "^17.0.0 || ^18.0.0"
+  },
+  "dependencies": {
+    "moment": "^2.30.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",
@@ -43,8 +45,5 @@
     "eslint-plugin-react-refresh": "^0.4.14",
     "globals": "^15.11.0",
     "vite": "^5.4.10"
-  },
-  "dependencies": {
-    "moment": "^2.30.1"
   }
 }
